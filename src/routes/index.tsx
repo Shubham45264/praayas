@@ -1,29 +1,40 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Hero } from "@/sections/Hero";
+import { Stats } from "@/sections/Stats";
+import { Courses } from "@/sections/Courses";
+import { WhyChoose } from "@/sections/WhyChoose";
+import { Testimonials } from "@/sections/Testimonials";
+import { Faculty } from "@/sections/Faculty";
+import { GalleryPreview } from "@/sections/GalleryPreview";
+import { FAQ } from "@/sections/FAQ";
+import { CTA } from "@/sections/CTA";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "Prayaas Classes — Premium Coaching for JEE, NEET & Boards" },
+      { name: "description", content: "Premium coaching institute for JEE, NEET, Foundation and Board exams with expert faculty, smart learning and proven results." },
+      { property: "og:title", content: "Prayaas Classes — Premium Coaching Institute" },
+      { property: "og:description", content: "Transform your future with India's most trusted coaching for JEE, NEET and Boards." },
+      { property: "og:url", content: "/" },
     ],
+    links: [{ rel: "canonical", href: "/" }],
   }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <>
+      <Hero />
+      <Stats />
+      <Courses limit={3} />
+      <WhyChoose />
+      <Testimonials />
+      <Faculty />
+      <GalleryPreview />
+      <FAQ />
+      <CTA />
+    </>
   );
 }
