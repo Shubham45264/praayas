@@ -7,10 +7,10 @@ import { CTA } from "@/sections/CTA";
 export const Route = createFileRoute("/results")({
   head: () => ({
     meta: [
-      { title: "Results — Prayaas Classes Top Rankers" },
-      { name: "description", content: "Celebrating our top-ranking students across JEE, NEET and Board exams. See the Prayaas Classes results that speak for themselves." },
-      { property: "og:title", content: "Results — Prayaas Classes" },
-      { property: "og:description", content: "Top rankers, achievements and the proven impact of Prayaas Classes." },
+      { title: "Results — Prayaas Academy Top Rankers" },
+      { name: "description", content: "Celebrating our top-ranking students across JEE, NEET and Board exams. See the Prayaas Academy results that speak for themselves." },
+      { property: "og:title", content: "Results — Prayaas Academy" },
+      { property: "og:description", content: "Top rankers, achievements and the proven impact of Prayaas Academy." },
       { property: "og:url", content: "/results" },
     ],
     links: [{ rel: "canonical", href: "/results" }],

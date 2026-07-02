@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useRouterState } from "@tanstack/react-router";
 import { Menu, X, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { supabase } from "@/lib/supabase";
 import { cn } from "@/lib/utils";
 
 const links = [
@@ -18,12 +19,32 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const pathname = useRouterState({ select: (s) => s.location.pathname });
 
+  const [session, setSession] = useState<any>(null);
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session);
+    });
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+    });
+
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      subscription.unsubscribe();
+    };
   }, []);
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+  };
 
   useEffect(() => setOpen(false), [pathname]);
 
@@ -31,7 +52,7 @@ export function Navbar() {
     <header
       className={cn(
         "fixed top-0 inset-x-0 z-50 transition-all duration-300",
-        scrolled ? "glass shadow-soft" : "bg-transparent",
+        scrolled ? "glass-dark border-b border-border/50 shadow-soft" : "bg-transparent",
       )}
     >
       <div className="container-page flex h-16 items-center justify-between gap-4 md:h-20">
@@ -40,7 +61,7 @@ export function Navbar() {
             <GraduationCap className="h-5 w-5" />
           </span>
           <span className="font-display text-lg font-bold truncate">
-            Prayaas <span className="gradient-text">Classes</span>
+            Prayaas <span className="gradient-text">Academy</span>
           </span>
         </Link>
 
@@ -59,12 +80,23 @@ export function Navbar() {
         </nav>
 
         <div className="hidden lg:flex items-center gap-2">
-          <Button asChild variant="ghost" className="rounded-full">
-            <Link to="/contact">Book a Call</Link>
-          </Button>
-          <Button asChild className="rounded-full text-white shadow-soft" style={{ background: "var(--gradient-brand)" }}>
-            <Link to="/contact">Enroll Now</Link>
-          </Button>
+          {session ? (
+            <>
+              <span className="text-sm font-medium mr-2 text-muted-foreground hidden xl:inline-block">{session.user.email}</span>
+              <Button onClick={handleLogout} variant="ghost" className="rounded-full">
+                Sign Out
+              </Button>
+            </>
+          ) : (
+            <>
+              <Button asChild variant="ghost" className="rounded-full">
+                <Link to="/login">Log In</Link>
+              </Button>
+              <Button asChild className="rounded-full text-white shadow-soft" style={{ background: "var(--gradient-brand)" }}>
+                <Link to="/signup">Sign Up</Link>
+              </Button>
+            </>
+          )}
         </div>
 
         <button
@@ -77,7 +109,7 @@ export function Navbar() {
       </div>
 
       {open && (
-        <div className="lg:hidden border-t border-border glass">
+        <div className="lg:hidden border-t border-border/50 glass-dark">
           <div className="container-page py-4 flex flex-col gap-1">
             {links.map((l) => (
               <Link
@@ -90,9 +122,20 @@ export function Navbar() {
                 {l.label}
               </Link>
             ))}
-            <Button asChild className="mt-2 rounded-full text-white" style={{ background: "var(--gradient-brand)" }}>
-              <Link to="/contact">Enroll Now</Link>
-            </Button>
+            {session ? (
+              <Button onClick={handleLogout} variant="ghost" className="mt-2 w-full justify-start rounded-xl px-4 py-3 h-auto font-medium">
+                Sign Out
+              </Button>
+            ) : (
+              <>
+                <Button asChild variant="ghost" className="mt-2 w-full justify-start rounded-xl px-4 py-3 h-auto font-medium">
+                  <Link to="/login">Log In</Link>
+                </Button>
+                <Button asChild className="mt-2 rounded-full text-white" style={{ background: "var(--gradient-brand)" }}>
+                  <Link to="/signup">Sign Up</Link>
+                </Button>
+              </>
+            )}
           </div>
         </div>
       )}

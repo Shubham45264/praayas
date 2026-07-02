@@ -75,13 +75,13 @@ export function Courses({ limit }: { limit?: number }) {
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {list.map((c, i) => (
             <Reveal key={c.slug} delay={i * 0.05}>
-              <article className="group h-full rounded-3xl border border-border bg-card overflow-hidden shadow-soft hover:shadow-elegant transition-all duration-500 hover:-translate-y-1">
-                <div className={`relative h-40 bg-gradient-to-br ${c.color} overflow-hidden`}>
+              <article className="group h-full rounded-2xl border border-border/50 bg-card/40 backdrop-blur-md overflow-hidden shadow-soft hover:shadow-elegant transition-all duration-500 hover:-translate-y-2 hover:border-accent/40">
+                <div className={`relative h-40 bg-gradient-to-br from-primary/10 to-secondary/20 border-b border-border/50 overflow-hidden`}>
                   <div className="absolute inset-0 mesh-bg opacity-30" />
                   <div className="absolute top-4 left-4">
-                    <span className="rounded-full bg-white/20 backdrop-blur px-3 py-1 text-xs font-medium text-white">{c.tag}</span>
+                    <span className="rounded-full shadow-soft px-3 py-1 text-xs font-semibold text-foreground" style={{ background: "var(--gradient-gold)" }}>{c.tag}</span>
                   </div>
-                  <BookOpen className="absolute -bottom-4 -right-4 h-32 w-32 text-white/15" />
+                  <BookOpen className="absolute -bottom-4 -right-4 h-32 w-32 text-primary/10 transition-transform duration-500 group-hover:scale-110 group-hover:text-primary/20" />
                 </div>
                 <div className="p-6 space-y-3">
                   <h3 className="font-display text-xl font-bold">{c.title}</h3>
@@ -105,7 +105,7 @@ export function Courses({ limit }: { limit?: number }) {
 
         {limit && (
           <div className="mt-10 text-center">
-            <Button asChild size="lg" variant="outline" className="rounded-full">
+            <Button asChild size="lg" variant="outline" className="rounded-full border-border bg-card/50 hover:bg-card/80 text-foreground transition-all">
               <Link to="/courses">View all courses <ArrowRight className="ml-2 h-4 w-4" /></Link>
             </Button>
           </div>

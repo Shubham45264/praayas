@@ -10,10 +10,10 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/gallery")({
   head: () => ({
     meta: [
-      { title: "Gallery — Prayaas Classes Campus & Events" },
-      { name: "description", content: "Browse moments from Prayaas Classes — classrooms, events, achievements and student life." },
-      { property: "og:title", content: "Gallery — Prayaas Classes" },
-      { property: "og:description", content: "A visual tour of campus life at Prayaas Classes." },
+      { title: "Gallery — Prayaas Academy Campus & Events" },
+      { name: "description", content: "Browse moments from Prayaas Academy — classrooms, events, achievements and student life." },
+      { property: "og:title", content: "Gallery — Prayaas Academy" },
+      { property: "og:description", content: "A visual tour of campus life at Prayaas Academy." },
       { property: "og:url", content: "/gallery" },
     ],
     links: [{ rel: "canonical", href: "/gallery" }],

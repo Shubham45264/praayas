@@ -12,9 +12,9 @@ import { CTA } from "@/sections/CTA";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Prayaas Classes — Premium Coaching for JEE, NEET & Boards" },
+      { title: "Prayaas Academy — Premium Coaching for JEE, NEET & Boards" },
       { name: "description", content: "Premium coaching institute for JEE, NEET, Foundation and Board exams with expert faculty, smart learning and proven results." },
-      { property: "og:title", content: "Prayaas Classes — Premium Coaching Institute" },
+      { property: "og:title", content: "Prayaas Academy — Premium Coaching Institute" },
       { property: "og:description", content: "Transform your future with India's most trusted coaching for JEE, NEET and Boards." },
       { property: "og:url", content: "/" },
     ],

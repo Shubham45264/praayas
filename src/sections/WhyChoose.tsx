@@ -13,7 +13,8 @@ const features = [
 
 export function WhyChoose() {
   return (
-    <section className="py-16 lg:py-24 bg-gradient-to-b from-muted/30 to-transparent">
+    <section className="py-16 lg:py-24 relative overflow-hidden">
+      <div className="absolute inset-0 mesh-bg opacity-20 -z-10" />
       <div className="container-page">
         <SectionHeader
           eyebrow="Why Prayaas"
@@ -24,8 +25,8 @@ export function WhyChoose() {
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {features.map((f, i) => (
             <Reveal key={f.title} delay={i * 0.05}>
-              <div className="group h-full rounded-3xl border border-border bg-card p-7 shadow-soft hover:shadow-elegant transition-all duration-500 hover:-translate-y-1">
-                <div className="inline-grid h-14 w-14 place-items-center rounded-2xl text-white mb-5 transition-transform group-hover:scale-110" style={{ background: "var(--gradient-brand)" }}>
+              <div className="group h-full rounded-2xl border border-border/50 bg-card/40 backdrop-blur-md p-7 shadow-soft hover:shadow-elegant transition-all duration-500 hover:-translate-y-2 hover:border-accent/40">
+                <div className="inline-grid h-14 w-14 place-items-center rounded-xl text-primary-foreground mb-5 transition-transform group-hover:scale-110 shadow-soft" style={{ background: "var(--gradient-brand)" }}>
                   <f.icon className="h-6 w-6" />
                 </div>
                 <h3 className="font-display text-xl font-bold">{f.title}</h3>

@@ -10,7 +10,8 @@ export const faculty = [
 
 export function Faculty() {
   return (
-    <section className="py-16 lg:py-24 bg-gradient-to-b from-transparent via-muted/30 to-transparent">
+    <section className="py-16 lg:py-24 relative">
+      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-background via-muted/10 to-background" />
       <div className="container-page">
         <SectionHeader
           eyebrow="Meet the Mentors"
@@ -20,14 +21,14 @@ export function Faculty() {
         <div className="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-6">
           {faculty.map((f, i) => (
             <Reveal key={f.name} delay={i * 0.07}>
-              <div className="group rounded-3xl border border-border bg-card p-5 shadow-soft hover:shadow-elegant transition-all duration-500 hover:-translate-y-1">
-                <div className={`aspect-square w-full rounded-2xl bg-gradient-to-br ${f.color} grid place-items-center text-white text-4xl font-display font-bold mesh-bg`}>
+              <div className="group rounded-2xl border border-border/50 bg-card/70 backdrop-blur-md p-5 shadow-soft hover:shadow-elegant transition-all duration-500 hover:-translate-y-2 hover:border-accent/40">
+                <div className={`aspect-square w-full rounded-xl bg-gradient-to-br from-primary/20 to-secondary/30 border border-primary/20 grid place-items-center text-primary text-4xl font-display font-bold mesh-bg`}>
                   {f.name.split(" ").map((p) => p[0]).slice(0, 2).join("")}
                 </div>
                 <div className="mt-4 space-y-1">
                   <h3 className="font-display text-lg font-bold leading-tight">{f.name}</h3>
                   <p className="text-sm text-muted-foreground">{f.role}</p>
-                  <p className="text-xs font-medium text-primary mt-1">{f.exp} experience</p>
+                  <p className="text-xs font-semibold text-accent mt-1">{f.exp} experience</p>
                 </div>
               </div>
             </Reveal>

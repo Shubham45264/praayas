@@ -9,9 +9,9 @@ import { CTA } from "@/sections/CTA";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About Prayaas Classes — Our Mission & Vision" },
-      { name: "description", content: "Learn how Prayaas Classes empowers students through expert mentorship, modern pedagogy and a results-driven culture." },
-      { property: "og:title", content: "About Prayaas Classes" },
+      { title: "About Prayaas Academy — Our Mission & Vision" },
+      { name: "description", content: "Learn how Prayaas Academy empowers students through expert mentorship, modern pedagogy and a results-driven culture." },
+      { property: "og:title", content: "About Prayaas Academy" },
       { property: "og:description", content: "Our story, mission and the people behind India's most trusted coaching institute." },
       { property: "og:url", content: "/about" },
     ],
@@ -34,7 +34,7 @@ function AboutPage() {
       <PageHero
         eyebrow="About Us"
         title={<>Building bright futures, <span className="gradient-text">one student at a time</span></>}
-        description="Prayaas Classes is a premium coaching institute built on three principles — concept mastery, personal mentorship and consistent practice."
+        description="Prayaas Academy is a premium coaching institute built on three principles — concept mastery, personal mentorship and consistent practice."
       />
 
       <section className="py-12 lg:py-16">

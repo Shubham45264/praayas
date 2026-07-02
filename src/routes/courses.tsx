@@ -8,9 +8,9 @@ import { cn } from "@/lib/utils";
 export const Route = createFileRoute("/courses")({
   head: () => ({
     meta: [
-      { title: "Courses — Prayaas Classes" },
-      { name: "description", content: "Explore Prayaas Classes' JEE, NEET, Foundation, Boards and Olympiad programs with detailed curriculum, duration and fees." },
-      { property: "og:title", content: "Courses — Prayaas Classes" },
+      { title: "Courses — Prayaas Academy" },
+      { name: "description", content: "Explore Prayaas Academy's JEE, NEET, Foundation, Boards and Olympiad programs with detailed curriculum, duration and fees." },
+      { property: "og:title", content: "Courses — Prayaas Academy" },
       { property: "og:description", content: "Programs designed for real results — concept clarity, mentorship and practice." },
       { property: "og:url", content: "/courses" },
     ],

@@ -16,9 +16,9 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Prayaas Classes" },
-      { name: "description", content: "Get in touch with Prayaas Classes. Book an admission counselling session, request a callback or visit our campus." },
-      { property: "og:title", content: "Contact Prayaas Classes" },
+      { title: "Contact — Prayaas Academy" },
+      { name: "description", content: "Get in touch with Prayaas Academy. Book an admission counselling session, request a callback or visit our campus." },
+      { property: "og:title", content: "Contact Prayaas Academy" },
       { property: "og:description", content: "Talk to our mentors and start your success journey." },
       { property: "og:url", content: "/contact" },
     ],
@@ -91,7 +91,7 @@ function ContactPage() {
 
             <div className="rounded-3xl overflow-hidden border border-border shadow-soft">
               <iframe
-                title="Prayaas Classes location"
+                title="Prayaas Academy location"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3503.4!2d77.59!3d12.97!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMTLCsDU4JzEyLjAiTiA3N8KwMzUnMjQuMCJF!5e0!3m2!1sen!2sin!4v1700000000000"
                 width="100%"
                 height="280"

@@ -70,13 +70,13 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Prayaas Classes — Premium Coaching for JEE, NEET & Boards" },
-      { name: "description", content: "Prayaas Classes is a premium coaching institute for JEE, NEET, Foundation and Board exams. Expert faculty, smart learning, proven results." },
-      { name: "author", content: "Prayaas Classes" },
-      { property: "og:title", content: "Prayaas Classes — Premium Coaching Institute" },
+      { title: "Prayaas Academy — Premium Coaching for JEE, NEET & Boards" },
+      { name: "description", content: "Prayaas Academy is a premium coaching institute for JEE, NEET, Foundation and Board exams. Expert faculty, smart learning, proven results." },
+      { name: "author", content: "Prayaas Academy" },
+      { property: "og:title", content: "Prayaas Academy — Premium Coaching Institute" },
       { property: "og:description", content: "Transform your future with India's most trusted coaching for JEE, NEET and Boards." },
       { property: "og:type", content: "website" },
-      { property: "og:site_name", content: "Prayaas Classes" },
+      { property: "og:site_name", content: "Prayaas Academy" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [

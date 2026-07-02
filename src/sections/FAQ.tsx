@@ -4,7 +4,7 @@ import { Plus } from "lucide-react";
 import { SectionHeader } from "@/components/SectionHeader";
 
 const faqs = [
-  { q: "What courses does Prayaas Classes offer?", a: "We offer JEE (Main + Advanced), NEET UG, Foundation (Class 8–10), Class 11 & 12 Boards, crash courses and Olympiad preparation programs." },
+  { q: "What courses does Prayaas Academy offer?", a: "We offer JEE (Main + Advanced), NEET UG, Foundation (Class 8–10), Class 11 & 12 Boards, crash courses and Olympiad preparation programs." },
   { q: "How are batches structured?", a: "Each batch has a maximum of 30 students to ensure personalised attention, doubt-clearing and faculty mentorship." },
   { q: "Do you provide study material?", a: "Yes — every student receives our printed concept books, formula booklets, daily practice problems and topic-wise test papers." },
   { q: "Are mock tests included?", a: "Absolutely. We conduct weekly, monthly and full-syllabus exam-pattern mock tests with detailed analytics for every student." },

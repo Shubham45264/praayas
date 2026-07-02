@@ -3,7 +3,7 @@ import { GraduationCap, Mail, Phone, MapPin, Facebook, Instagram, Youtube, Twitt
 
 export function Footer() {
   return (
-    <footer className="mt-24 border-t border-border bg-gradient-to-b from-background to-muted/40">
+    <footer className="mt-24 border-t border-border/50 bg-background">
       <div className="container-page py-14 grid gap-10 lg:grid-cols-4">
         <div className="lg:col-span-2 space-y-4 max-w-md">
           <Link to="/" className="flex items-center gap-2">
@@ -11,7 +11,7 @@ export function Footer() {
               <GraduationCap className="h-5 w-5" />
             </span>
             <span className="font-display text-lg font-bold">
-              Prayaas <span className="gradient-text">Classes</span>
+              Prayaas <span className="gradient-text">Academy</span>
             </span>
           </Link>
           <p className="text-sm text-muted-foreground leading-relaxed">
@@ -57,10 +57,10 @@ export function Footer() {
           </ul>
         </div>
       </div>
-      <div className="border-t border-border">
+      <div className="border-t border-border/50">
         <div className="container-page py-5 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-muted-foreground">
-          <p>© {new Date().getFullYear()} Prayaas Classes. All rights reserved.</p>
-          <p>Crafted with care for ambitious students.</p>
+          <p>© {new Date().getFullYear()} Prayaas Academy. All rights reserved.</p>
+          <p>Developed by sjtechworks</p>
         </div>
       </div>
     </footer>

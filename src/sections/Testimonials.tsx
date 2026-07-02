@@ -26,7 +26,7 @@ export function Testimonials() {
           title={<>Stories from our <span className="gradient-text">students & parents</span></>}
         />
         <div className="mt-12 mx-auto max-w-4xl">
-          <div className="relative rounded-3xl border border-border bg-card p-8 sm:p-12 shadow-elegant overflow-hidden">
+          <div className="relative rounded-2xl border border-border/50 bg-card/70 backdrop-blur-md p-8 sm:p-12 shadow-elegant overflow-hidden hover:border-accent/30 transition-all duration-500">
             <div className="absolute inset-0 mesh-bg opacity-30" />
             <Quote className="relative h-10 w-10 text-primary/30" />
             <AnimatePresence mode="wait">
@@ -41,13 +41,13 @@ export function Testimonials() {
                 <p className="text-lg sm:text-xl leading-relaxed font-medium">"{t.text}"</p>
                 <div className="flex items-center justify-between flex-wrap gap-4">
                   <div className="flex items-center gap-4">
-                    <div className={`grid h-12 w-12 place-items-center rounded-full bg-gradient-to-br ${t.color} text-white font-bold`}>{t.initials}</div>
+                    <div className="h-12 w-12 rounded-full bg-gradient-to-br from-primary to-secondary border border-primary/20 grid place-items-center text-primary-foreground font-bold shadow-soft">{t.initials}</div>
                     <div>
                       <p className="font-semibold">{t.name}</p>
                       <p className="text-sm text-muted-foreground">{t.role}</p>
                     </div>
                   </div>
-                  <div className="flex gap-1 text-amber-500">
+                  <div className="flex gap-1 text-accent">
                     {Array.from({ length: 5 }).map((_, k) => (
                       <Star key={k} className="h-4 w-4 fill-current" />
                     ))}

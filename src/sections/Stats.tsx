@@ -41,13 +41,14 @@ export function Stats() {
   return (
     <section className="py-12 lg:py-16">
       <div className="container-page">
-        <div className="rounded-3xl border border-border bg-card shadow-soft p-6 sm:p-10 grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
+        <div className="rounded-2xl border border-border/50 bg-card/70 backdrop-blur-md shadow-soft p-6 sm:p-10 grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 hover:shadow-elegant transition-all duration-500 hover:border-accent/30 relative overflow-hidden">
+          <div className="absolute inset-0 mesh-bg opacity-20 -z-10" />
           {stats.map((s) => (
             <div key={s.label} className="text-center lg:text-left">
-              <div className="inline-grid h-12 w-12 place-items-center rounded-2xl text-white mb-3" style={{ background: "var(--gradient-brand)" }}>
-                <s.icon className="h-5 w-5" />
+              <div className="inline-grid h-12 w-12 place-items-center rounded-2xl text-foreground mb-3 shadow-soft" style={{ background: "var(--gradient-gold)" }}>
+                <s.icon className="h-6 w-6" />
               </div>
-              <p className="font-display text-3xl sm:text-4xl font-bold">
+              <p className="font-display text-3xl sm:text-4xl font-bold gradient-text pb-1">
                 <Counter to={s.value} suffix={s.suffix} />
               </p>
               <p className="text-sm text-muted-foreground mt-1">{s.label}</p>
